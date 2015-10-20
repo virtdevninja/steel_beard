@@ -1,3 +1,6 @@
 [submodule "roles/ansible_steel_pigs"]
 	path = roles/ansible_steel_pigs
 	url = git@github.com:virtdevninja/ansible_steel_pigs.git
+[submodule "roles/dhcp_server"]
+	path = roles/dhcp_server
+	url = git@github.com:pdellaert/dhcp_server.git
