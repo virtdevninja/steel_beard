@@ -1,0 +1,3 @@
+[submodule "roles/ansible_steel_pigs"]
+	path = roles/ansible_steel_pigs
+	url = git@github.com:virtdevninja/ansible_steel_pigs.git
