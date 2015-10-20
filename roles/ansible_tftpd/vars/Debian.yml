@@ -1,0 +1,4 @@
+---
+
+service_packages:
+  - tftpd-hpa

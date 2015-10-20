@@ -1,0 +1,6 @@
+---
+tftpd_root_dir: /var/www/html
+tftpd_listen_address: "[::]:69"
+tftpd_options: "--secure"
+tftpd_user_name: tftp
+

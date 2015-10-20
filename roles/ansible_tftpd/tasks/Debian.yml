@@ -1,0 +1,22 @@
+---
+
+- name: Add the Ubuntu specific varibles
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Install required packages on Ubuntu
+  apt: name={{ item }} state=installed
+  with_items: service_packages
+
+- name: Ensure tftp_root_dir exists on Ubuntu
+  file: name={{ tftpd_root_dir }} state=directory recurse=yes
+
+- name: Add tftpd config file to Ubuntu
+  template:
+    src: tftpd-hpa-Debian.j2
+    dest: /etc/default/tftpd-hpa
+  notify:
+    - restart tftpd on Ubuntu
+
+- name: Make sure tftpd starts on boot on Ubuntu
+  service: name=tftpd-hpa enabled=yes state=started
+

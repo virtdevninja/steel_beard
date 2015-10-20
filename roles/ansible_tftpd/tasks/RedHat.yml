@@ -1,0 +1,23 @@
+---
+
+- name: Add the RedHat specific varibles
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Install the packages required for Fedora
+  dnf: name={{ item }} state=installed
+  with_items: service_packages
+
+- name: Ensure tftp_root_dir exists on Fedora
+  file: name={{ tftpd_root_dir }} state=directory recurse=yes
+
+- name: Add tftpd config file to Fedora
+  template:
+    src: tftpd-service-RedHat.j2
+    dest: "/usr/lib/systemd/system/tftp.service"
+
+- name: Reload systemd on Fedora
+  command: systemctl daemon-reload
+
+- name: Make sure tftpd starts on boot on Fedora
+  service: name=tftp enabled=yes state=restarted
+

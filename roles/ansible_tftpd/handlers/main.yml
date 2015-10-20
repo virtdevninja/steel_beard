@@ -1,0 +1,7 @@
+---
+
+- name: restart tftpd on Ubuntu
+  service: name=tftpd-hpa state=restarted
+
+- name: restart tftpd on Fedora
+  service: name=tftp state=restarted
