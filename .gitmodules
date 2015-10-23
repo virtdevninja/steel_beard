@@ -3,7 +3,7 @@
 	url = git@github.com:virtdevninja/ansible_steel_pigs.git
 [submodule "roles/dhcp_server"]
 	path = roles/dhcp_server
-	url = git@github.com:pdellaert/dhcp_server.git
+	url = git@github.com:virtdevninja/dhcp_server.git
 [submodule "roles/ansible-redis"]
 	path = roles/ansible-redis
 	url = git@github.com:yavijava/ansible-redis.git
